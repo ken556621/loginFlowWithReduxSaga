@@ -8,9 +8,6 @@ import './shared/global.css';
 const history = createBrowserHistory();
 
 class AppContainer extends Component {
-    constructor(props){
-        super(props);
-    }
     render() { 
         return ( 
             <Router history = { history }>

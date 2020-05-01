@@ -3,10 +3,6 @@ import { connect } from "react-redux";
 
 export default function(ComposedClass){
     class Auth extends Component {
-        constructor(props) {
-              super(props);
-        }
-  
         componentDidMount(){
             const { authenticated, authenticating, history } = this.props;
             if(!authenticating){

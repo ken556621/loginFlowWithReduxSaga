@@ -28,6 +28,7 @@ const Error = styled.div`
     margin-top: 4px;
 `;
 
+
 const SignInForm = ({ closeSignInForm }) => (
     <Modal onClose={ closeSignInForm }>
         <Modal.Header>
