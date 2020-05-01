@@ -1,25 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
 
 import Home from '../Home/Home';
+import SignInForm from '../SignInForm/SignInForm';
 import Button from '../shared/Button';
 
 class Login extends Component {
     constructor(props){
-        super(props)
+        super(props);
+        this.state = {
+            isSignInForm: false
+        }
     }
+
+    showSignInForm = () => {
+        this.setState({
+            isSignInForm: true
+        })
+    }
+
+    closeSignInForm = () => {
+        this.setState({
+            isSignInForm: false
+        })
+    }
+
     render() { 
+        const { isSignInForm } = this.state;
         return ( 
             <>
-                <Home />
-                { 
-                    authenticated ? 
-                    null : 
-                    <h3>
-                        You must sign in to view the page at/protected
-                    </h3>
+                { isSignInForm ? <SignInForm closeSignInForm = { this.closeSignInForm }/> :
+                    <Fragment>
+                        <Home />
+                        <h3>
+                            You must sign in to view the page at/protected
+                        </h3>
+                        <Button text = { "Sign In" } cb = { this.showSignInForm } />
+                    </Fragment>
                 }
-                { authenticated ? <Button text = { "Sign Out" } cb = { this.handleSinOut }/> : <Button text = { "Sign In" } cb = { this.handleSinIn } /> }
             </>
         );
     }

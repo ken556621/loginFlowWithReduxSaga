@@ -7,10 +7,6 @@ class Home extends Component {
         super(props);
     }
 
-    handleSinIn = () => {
-        console.log("Sign In")
-    }
-
     handleSinOut = () => {
         console.log("signOut")
     }
