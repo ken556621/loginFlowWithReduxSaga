@@ -1,0 +1,1 @@
+{"version":3,"sources":["global.css"],"names":[],"mappings":"AAAA,KACI,uDAA2D,CAC3D,cACJ,CACA,EACI,qBACJ","file":"main.55715daf.chunk.css","sourcesContent":["body {\n    font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n    font-size: 13px;\n} \n* {\n    box-sizing: border-box;\n}"]}

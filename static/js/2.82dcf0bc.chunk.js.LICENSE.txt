@@ -1,0 +1,153 @@
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+/*! ./Modal */
+
+/*! ./ModalBody */
+
+/*! ./ModalContent */
+
+/*! ./ModalContext */
+
+/*! ./ModalFooter */
+
+/*! ./ModalHeader */
+
+/*! ./ModalOverlay */
+
+/*! ./ModalRoot */
+
+/*! ./ModalTitle */
+
+/*! ./index.styl */
+
+/*! ./useModal */
+
+/*! @trendmicro/react-portal */
+
+/*! classnames */
+
+/*! exports provided: ModalProvider, ModalConsumer, ModalRoot, useModal, default */
+
+/*! exports provided: ModalStateContext, ModalSettingsContext, ModalActionContext, ModalProvider, ModalConsumer */
+
+/*! exports provided: default */
+
+/*! no static exports found */
+
+/*! prop-types */
+
+/*! react */
+
+/*! react-buttons v1.3.1 | (c) 2018 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-buttons */
+
+/*! react-modal v3.1.0 | (c) 2019 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-modal */
+
+/*!**********************!*\
+    !*** ./src/index.js ***!
+    \**********************/
+
+/*!***********************!*\
+    !*** ./src/Modal.jsx ***!
+    \***********************/
+
+/*!************************!*\
+    !*** ./src/index.styl ***!
+    \************************/
+
+/*!************************!*\
+    !*** external "react" ***!
+    \************************/
+
+/*!*************************!*\
+    !*** ./src/useModal.js ***!
+    \*************************/
+
+/*!***************************!*\
+    !*** ./src/ModalBody.jsx ***!
+    \***************************/
+
+/*!***************************!*\
+    !*** ./src/ModalRoot.jsx ***!
+    \***************************/
+
+/*!****************************!*\
+    !*** ./src/ModalTitle.jsx ***!
+    \****************************/
+
+/*!*****************************!*\
+    !*** ./src/ModalContext.js ***!
+    \*****************************/
+
+/*!*****************************!*\
+    !*** ./src/ModalFooter.jsx ***!
+    \*****************************/
+
+/*!*****************************!*\
+    !*** ./src/ModalHeader.jsx ***!
+    \*****************************/
+
+/*!*****************************!*\
+    !*** external "classnames" ***!
+    \*****************************/
+
+/*!*****************************!*\
+    !*** external "prop-types" ***!
+    \*****************************/
+
+/*!******************************!*\
+    !*** ./src/ModalContent.jsx ***!
+    \******************************/
+
+/*!******************************!*\
+    !*** ./src/ModalOverlay.jsx ***!
+    \******************************/
+
+/*!*******************************************!*\
+    !*** external "@trendmicro/react-portal" ***!
+    \*******************************************/
+
+/** @license React v0.19.1
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
