@@ -11,7 +11,7 @@ async function loginAPI(){
     return response;
 }
 
-function* authorize({userName, password, redirect}){
+export function* authorize({userName, password, redirect}){
     try {
         yield call(loginAPI)
         yield put({ type: LOGIN_SUCCESS });
@@ -24,7 +24,7 @@ function* authorize({userName, password, redirect}){
     }
 }
 
-function* logInFlow(action){
+export function* logInFlow(action){
     try {
         const task = yield fork(authorize, { 
             userName: action.userName,
@@ -38,7 +38,7 @@ function* logInFlow(action){
     }
 }
 
-function* watchLogInRequest(){
+export function* watchLogInRequest(){
     yield takeLatest(LOGIN_REQUEST, logInFlow)
 }
 
