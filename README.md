@@ -12,8 +12,8 @@
 3. React-Router
 
 ### Test Data
-user: guest
-password: guest
+* user: guest
+* password: guest
  
 ![](https://i.imgur.com/V7KbcOO.gif)
 
