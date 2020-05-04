@@ -20,13 +20,12 @@ export default function(ComposedClass){
   
         render() {
             const { authenticated, authenticating } = this.props;
-
             if(authenticating) {
                 return <h1>Is loading</h1>
-            } else {
+            }else{
                 if(authenticated) {
                     return <ComposedClass {...this.props}/>
-                } else {
+                }else{
                     return <div></div>
                 }
  

@@ -91,7 +91,7 @@ class SignInForm extends Component {
             return
         }
         dispatch(logInRequest(userName, password, () => history.push("/protected")));
-    }
+    } 
 
     handleKeyDown = (e) => {
         if (e.key === 'Enter') {

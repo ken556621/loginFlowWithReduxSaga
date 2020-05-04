@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 
+
 class Home extends Component {
-
-    handleSinOut = () => {
-        console.log("signOut")
-    }
-
     render() { 
         const { authenticated } = this.props;
         return ( 
             <div>
                 <h1>
-                    { authenticated ? "Welcome" : "You are not signed in" }
+                    { authenticated ? "Welcome!" : "You are not signed in!" }
                 </h1>
                 <ul>
                     <li>
