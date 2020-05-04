@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { LOGIN_REQUEST, LOGIN_FAIL } from '../actions/Constants';
+import { LOGIN_FAIL, LOGIN_CANCEL } from '../actions/Constants';
 import { logInRequest } from '../actions/UserAction';
 import styled from 'styled-components';
 import Modal from '@trendmicro/react-modal';
@@ -66,10 +66,15 @@ class SignInForm extends Component {
         dispatch(logInRequest(userName, password, () => history.push("/protected")));
     }
 
+    handleCancel = () => {
+        const { closeSignInForm, dispatch } = this.props;
+        dispatch({ type: LOGIN_CANCEL });
+        closeSignInForm();
+    }
+
     render() { 
-        const { closeSignInForm } = this.props;
         return ( 
-            <Modal onClose={ closeSignInForm }>
+            <Modal onClose={ this.handleCancel }>
                 <Modal.Header>
                     <Modal.Title>
                         Sign In
@@ -91,7 +96,7 @@ class SignInForm extends Component {
                     <Error>Incorrect username or password.</Error>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick = { closeSignInForm } btnStyle="flat">
+                    <Button onClick = { this.handleCancel } btnStyle="flat">
                         Cancel
                     </Button>
                     <Button onClick = { this.handleSubmit } btnStyle="primary">
