@@ -1,11 +1,16 @@
 const initiaState = {
     authenticated: false,
-    authenticating: true
+    authenticating: false,
+    formState: {
+        userName: "",
+        password: ""
+    },
+    errorMsg: ""
 }
 
 const loginReducer = (state = initiaState, action) => {
     switch (action.type){
-        case "LOGIN_REQUEST":
+        case "LOGIN_REQUEST_ASYNC":
             return {
                 ...state, 
                 authenticating: true,
@@ -17,17 +22,35 @@ const loginReducer = (state = initiaState, action) => {
                 authenticating: false,
                 authenticated: true
             }
+        case "UPDATE_USER":
+            return {
+                ...state, 
+                authenticating: false,
+                authenticated: true,
+                formState: {
+                    userName: action.userName,
+                    password: action.password
+                }
+            }
         case "LOGIN_FAIL":
+            return {
+                ...state,
+                authenticating: false,
+                authenticated: false,
+                errorMsg: "Login Fail"
+            }
+        case "LOGOUT":
             return {
                 ...state,
                 authenticating: false,
                 authenticated: false
             }
-        case "LOGOUT":
+        case "LOGIN_ERROR":
             return {
                 ...state,
-                authenticating: true,
-                authenticated: false
+                authenticating: false,
+                authenticated: false,
+                errorMsg: "Login Error"
             }
         default :
             return state

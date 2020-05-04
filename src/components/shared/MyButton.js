@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = function({ text, cb }){
+const MyButton = function({ text, cb }){
     return(
         <button onClick = { cb }>
             { text }
@@ -8,5 +8,5 @@ const Button = function({ text, cb }){
     )
 };
 
-export default Button;
+export default MyButton;
 

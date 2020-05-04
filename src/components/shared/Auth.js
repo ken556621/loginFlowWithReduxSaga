@@ -25,6 +25,7 @@ export default function(ComposedClass){
                 return <h1>Is loading</h1>
             } else {
                 if(authenticated) {
+                    console.log("auth")
                     return <ComposedClass {...this.props}/>
                 } else {
                     return <div></div>
@@ -36,7 +37,6 @@ export default function(ComposedClass){
   
     function mapStateToProps(store) {
         return {
-            offline: store.offline,
             authenticating: store.user.authenticating,
             authenticated: store.user.authenticated
         };
