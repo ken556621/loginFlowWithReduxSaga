@@ -36,16 +36,29 @@ class SignInForm extends Component {
         super(props);
         this.state = {
             userName: "",
-            password: ""
+            password: "",
+            emptyUserName: false,
+            emptyPassword: false,
+            invalid: false
         }
     }
 
     handleChange = (e) => {
         if(e.target.name === "userName"){
+            if(e.target.value === ""){
+                this.setState({
+                    emptyUserName: true
+                })
+            }
             this.setState({
                 userName: e.target.value
             })
         }else if(e.target.name === "password"){
+            if(e.target.value === ""){
+                this.setState({
+                    emptyPassword: true
+                })
+            }
             this.setState({
                 password: e.target.value
             })
@@ -56,10 +69,16 @@ class SignInForm extends Component {
         const { userName, password } = this.state;
         const { dispatch, history } = this.props;
         if(userName.trim() !== "guest"){
+            this.setState({
+                invalid: true
+            })
             dispatch({ type: LOGIN_FAIL })
             return
         }
         if(password.trim() !== "guest"){
+            this.setState({
+                invalid: true
+            })
             dispatch({ type: LOGIN_FAIL })
             return
         }
@@ -73,6 +92,7 @@ class SignInForm extends Component {
     }
 
     render() { 
+        const { emptyUserName, emptyPassword, invalid } = this.state;
         return ( 
             <Modal onClose={ this.handleCancel }>
                 <Modal.Header>
@@ -87,13 +107,15 @@ class SignInForm extends Component {
                             <Input onChange={ this.handleChange } name="userName" type="text" placeholder="Enter username" />
                         </div>
                     </FormGroup>
+                    { emptyUserName ? <Error>This is required field!</Error> : null }
                     <FormGroup>
                         <label>Password</label>
                         <div>
                             <Input onChange={ this.handleChange } name="password" type="password" placeholder="Enter password" />
                         </div>
                     </FormGroup>
-                    <Error>Incorrect username or password.</Error>
+                    { emptyPassword ? <Error>This is required field!</Error> : null }
+                    { invalid ? <Error>Incorrect username or password.</Error> : null }
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick = { this.handleCancel } btnStyle="flat">
