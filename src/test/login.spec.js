@@ -1,6 +1,6 @@
 import { fork, take, cancel } from 'redux-saga/effects';
 import { LOGIN_REQUEST, LOGIN_CANCEL } from '../components/actions/Constants';
-import { authorize, logInFlow, watchLogInRequest } from '../sagas/rootSaga';
+import { authorize, logInFlow, watchLogInRequest } from '../sagas/loginSaga';
 import { createMockTask } from '@redux-saga/testing-utils';
 import { assert } from 'chai';
 

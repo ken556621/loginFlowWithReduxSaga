@@ -49,6 +49,10 @@ class SignInForm extends Component {
                 this.setState({
                     emptyUserName: true
                 })
+            }else{
+                this.setState({
+                    emptyUserName: false
+                })
             }
             this.setState({
                 userName: e.target.value
@@ -57,6 +61,10 @@ class SignInForm extends Component {
             if(e.target.value === ""){
                 this.setState({
                     emptyPassword: true
+                })
+            }else{
+                this.setState({
+                    emptyPassword: false
                 })
             }
             this.setState({
@@ -85,6 +93,12 @@ class SignInForm extends Component {
         dispatch(logInRequest(userName, password, () => history.push("/protected")));
     }
 
+    handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            this.handleSubmit()
+        }
+    }
+
     handleCancel = () => {
         const { closeSignInForm, dispatch } = this.props;
         dispatch({ type: LOGIN_CANCEL });
@@ -111,7 +125,7 @@ class SignInForm extends Component {
                     <FormGroup>
                         <label>Password</label>
                         <div>
-                            <Input onChange={ this.handleChange } name="password" type="password" placeholder="Enter password" />
+                            <Input onChange={ this.handleChange } onKeyDown = { this.handleKeyDown } name="password" type="password" placeholder="Enter password" />
                         </div>
                     </FormGroup>
                     { emptyPassword ? <Error>This is required field!</Error> : null }
@@ -121,9 +135,14 @@ class SignInForm extends Component {
                     <Button onClick = { this.handleCancel } btnStyle="flat">
                         Cancel
                     </Button>
-                    <Button onClick = { this.handleSubmit } btnStyle="primary">
-                        Sign In
-                    </Button>
+                    { emptyUserName || emptyPassword ?
+                        <Button onClick = { this.handleSubmit } disabled btnStyle="primary">
+                            Sign In
+                        </Button> :
+                        <Button onClick = { this.handleSubmit } btnStyle="primary">
+                            Sign In
+                        </Button> 
+                    }
                 </Modal.Footer>
             </Modal>
         );
